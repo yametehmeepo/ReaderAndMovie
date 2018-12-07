@@ -1,0 +1,34 @@
+<import src="/template/movieList/movieList-template.wxml"/>
+<import src="/template/movieGrid/movieGrid-template.wxml"/>
+<view class="search">
+    <icon type="search" size="13" color="#1f4ba5" class="search_icon"></icon>
+    <input
+            class="search_input"
+            type="text"
+            placeholder="釜山行、夏有乔木仰望天堂"
+            placeholder-class="placeholder_search"
+            confirm-type="搜索"
+            bindfocus="onSearchFocus"
+            bindblur="onSearchBlur"
+            bindconfirm="onSearchConfirm"
+            bindinput="onSearchInput"
+            value="{{searchText}}"
+    />
+    <view class="search_close" wx:if="{{searchFocus}}">
+        <image src="/images/icon/xx.png" mode="widthFix" catch:tap="onSearchClose"></image>
+    </view>
+</view>
+<view wx:if="{{searchFocus}}">
+    <template is="movieGrid" data="{{movieList:searchResult}}"></template>
+</view>
+<view class="movie_container" wx:else>
+    <block wx:if="{{theatersForThree.length}}">
+        <template is="movieList" data="{{List:theatersForThree, type:'正在热映', category:'theaters'}}"></template>
+    </block>
+    <block wx:if="{{comingSoonForThree.length}}">
+        <template is="movieList" data="{{List:comingSoonForThree, type:'即将上映', category:'comingSoon'}}"></template>
+    </block>
+    <block wx:if="{{top250ForThree.length}}">
+        <template is="movieList" data="{{List:top250ForThree, type:'top250', category:'top250'}}"></template>
+    </block>
+</view>

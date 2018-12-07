@@ -1,0 +1,52 @@
+@import '/template/movieItem/movieItem-template.wxss';
+
+.movieList_container {
+    margin-bottom: 30rpx;
+    background-color: #fff;
+    padding: 0 15px;
+}
+
+.movieList_head {
+    position: relative;
+    padding: 32rpx 0;
+    line-height: 1;
+}
+
+.movieList_head_left {
+    font-size: 14px;
+    color: #666666;
+}
+
+.movieList_more {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 1;
+}
+
+.movieList_more_text {
+    font-size: 14px;
+    color: #5274b9;
+    vertical-align: middle;
+}
+
+.movieList_more_arr {
+    width: 5px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

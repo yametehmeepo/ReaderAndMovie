@@ -1,0 +1,7 @@
+<view class="container">
+    <image src="/images/avatar/2.png" class="avater"></image>
+    <text class="username">Hello, LXP</text>
+    <view>
+        <text class="moto" catch:tap="onTap">开启小程序之旅</text>
+    </view>
+</view>

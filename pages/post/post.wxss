@@ -1,0 +1,36 @@
+@import '/template/postItem/postItem-template.wxss';
+
+.swiper01 {
+    width: 100%;
+    height: 600rpx;
+}
+
+.swiper01 image {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

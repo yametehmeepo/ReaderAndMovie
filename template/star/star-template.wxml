@@ -1,0 +1,10 @@
+<template name="star">
+    <view class="star_container">
+        <image class="star_img" src="{{rating.stars/10>=1?'/images/icon/star.png':'/images/icon/none-star.png'}}" mode="widthFix"></image>
+        <image class="star_img" src="{{rating.stars/10>=2?'/images/icon/star.png':'/images/icon/none-star.png'}}" mode="widthFix"></image>
+        <image class="star_img" src="{{rating.stars/10>=3?'/images/icon/star.png':'/images/icon/none-star.png'}}" mode="widthFix"></image>
+        <image class="star_img" src="{{rating.stars/10>=4?'/images/icon/star.png':'/images/icon/none-star.png'}}" mode="widthFix"></image>
+        <image class="star_img" src="{{rating.stars/10>=5?'/images/icon/star.png':'/images/icon/none-star.png'}}" mode="widthFix"></image>
+        <text class="star_score">{{rating.average}}</text>
+    </view>
+</template>

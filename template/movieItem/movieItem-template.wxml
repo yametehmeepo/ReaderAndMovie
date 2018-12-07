@@ -1,0 +1,10 @@
+<import src="/template/star/star-template.wxml"/>
+<template name="movieItem">
+    <view class="movieItem_container" catch:tap="onMovieItemTap" data-moviedetail="{{ListItem}}">
+        <image class="movieItem_img" src="{{ListItem.images.large}}"></image>
+        <text class="movieItem_name">{{ListItem.title}}</text>
+        <block wx:if="{{ListItem.rating}}">
+            <template is="star" data="{{rating: ListItem.rating}}"></template>
+        </block>
+    </view>
+</template>

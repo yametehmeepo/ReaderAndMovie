@@ -1,0 +1,67 @@
+<import src="/template/star/star-template.wxml"/>
+<view class="movieDetail_container">
+    <view class="movieDetail_head">
+        <view class="movieDetail_head_inner">
+            <image src="{{MovieItem.images.large}}" mode="widthFix" class="movieDetail_bgImg"></image>
+            <view class="movieDetail_head_content">
+                <text class="movieDetail_head_title">{{MovieItem.title}}</text>
+                <text class="movieDetail_head_country">{{MovieItem.countries[0] + ' · ' + MovieItem.year}}</text>
+                <view class="movieDetail_head_like">
+                    <text class="movieDetail_head_number">{{MovieItem.wish_count}}</text>
+                    <text class="movieDetail_head_text">人喜欢</text>
+                    <text class="movieDetail_head_number">{{MovieItem.reviews_count}}</text>
+                    <text class="movieDetail_head_text">条评论</text>
+                </view>
+            </view>
+        </view>
+        <image
+                src="{{MovieItem.images.large}}"
+                mode="widthFix"
+                class="movieDetail_smallImg"
+                catch:tap="onPreviewImgTap"
+                data-imgurl="{{MovieItem.images.large}}">
+        </image>
+    </view>
+    <view class="movieDetail_intro">
+        <text class="movieDetail_intro_name">{{MovieItem.original_title}}</text>
+        <view class="horizontal_view_wrap">
+            <view class="horizontal_view">
+                <text class="horizontal_left_text">评分</text>
+                <view class="horizontal_right_text">
+                    <view class="horizontal_right_text_star">
+                        <template is="star" data="{{rating: MovieItem.rating}}"></template>
+                    </view>
+                </view>
+            </view>
+            <view class="horizontal_view">
+                <text class="horizontal_left_text">导演</text>
+                <view class="horizontal_right_text">{{MovieItem.directornames}}</view>
+            </view>
+            <view class="horizontal_view">
+                <text class="horizontal_left_text">影人</text>
+                <view class="director">{{MovieItem.castnames}}</view>
+            </view>
+            <view class="horizontal_view">
+                <text class="horizontal_left_text">类型</text>
+                <view class="director">{{MovieItem.genrenames}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="movieDetail_plot">
+        <text class="movieDetail_plot_title">剧情简介</text>
+        <text class="movieDetail_plot_content">剧情简介剧情简介剧情简介剧情简介剧情简介</text>
+    </view>
+    <view class="movieDetail_casts">
+        <text class="movieDetail_casts_title">影人</text>
+        <view class="movieDetail_casts_images">
+            <scroll-view scroll-x class="movieDetail_casts_images_inner">
+                <block wx:for="{{MovieItem.casts}}" wx:key="*this">
+                    <view class="movieDetail_caster">
+                        <image src="{{item.avatars.large}}" mode="widthFix"></image>
+                        <text>{{item.name}}</text>
+                    </view>
+                </block>
+            </scroll-view>
+        </view>
+    </view>
+</view>

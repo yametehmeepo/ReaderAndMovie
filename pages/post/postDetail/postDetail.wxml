@@ -1,0 +1,21 @@
+<view>
+    <view class="header_img">
+        <image src="{{headImgSrc}}" class="main_img" mode="widthFix"></image>
+        <view style="background-image:url('{{music.coverImg}}')" class="{{!isMusicPlaying?'coverImg':'coverImg on'}}"></view>
+        <image wx:if="{{!isMusicPlaying}}" catch:tap="onMusicTap" src="/images/music/music-start.png" class="music music_start"></image>
+        <image wx:else catch:tap="onMusicTap" src="/images/music/music-stop.png" class="music music_stop"></image>
+    </view>
+    <view class="author">
+        <image src="{{avatar}}"></image>
+        <text>{{author}}</text>
+        <text>发表于</text>
+        <text>{{dateTime}}</text>
+    </view>
+    <text class="detail_title">{{title}}</text>
+    <view class="share_collection">
+        <image wx:if="{{collected}}" src="/images/icon/collection.png" class="collection" catch:tap="onCollectionTap"></image>
+        <image wx:else src="/images/icon/collection-anti.png" class="collection" catch:tap="onCollectionTap"></image>
+        <image catch:tap="onShareTap" src="/images/icon/share.png" class="share"></image>
+    </view>
+    <text class="detail_content">{{detail}}</text>
+</view>

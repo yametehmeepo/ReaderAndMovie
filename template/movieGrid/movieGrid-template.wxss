@@ -1,0 +1,5 @@
+@import '/template/movieItem/movieItem-template.wxss';
+
+.movieGrid_container {
+    padding: 15px 15px 0;
+}

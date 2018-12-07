@@ -1,0 +1,16 @@
+/**app.wxss**/
+text {
+    font-family: "Microsoft YaHei";
+}
+
+.clear {
+    clear: both;
+}
+
+.clearfix:after {
+    clear: both;
+    content: '';
+    height: 0;
+    display: block;
+    visibility: none;
+}

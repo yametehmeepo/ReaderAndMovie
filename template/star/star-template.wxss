@@ -1,0 +1,28 @@
+.star_container {
+    display: flex;
+    flex-direction: row;
+    line-height: 1;
+}
+
+.star_img {
+    width: 10px;
+    margin: 1px 1px 0 0;
+}
+
+.star_score {
+    font-size: 12px;
+    color: #1f3463;
+    margin-left: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

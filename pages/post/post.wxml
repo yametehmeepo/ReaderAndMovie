@@ -1,0 +1,26 @@
+<import src="/template/postItem/postItem-template.wxml"/>
+<view>
+    <swiper
+            class="swiper01"
+            indicator-dots="{{indicatorDots}}"
+            indicator-color="{{indicatorColor}}"
+            indicator-active-color="{{indicatorActiveColor}}"
+            autoplay="{{autoplay}}"
+            interval="{{interval}}"
+            circular="{{circular}}"
+            previous-margin="0rpx"
+            next-margin="0rpx"
+            display-multiple-items="1"
+    >
+        <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+            <swiper-item catch:tap="onPostItemTap" data-postid="{{item.postid}}">
+                <image src="{{item.url}}" mode="widthFix"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+    <block wx:for="{{postList}}" wx:key="{{index}}">
+        <view catch:tap="onPostItemTap" data-postid="{{item.postId}}">
+            <template is="postItem" data="{{...item}}"/>
+        </view>
+    </block>
+</view>
